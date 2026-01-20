@@ -1,43 +1,5 @@
 <!doctype html>
 <html lang="tr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>İnsan Kaynakları Yetenek Analizi (Birliktelik Kuralları)</title>
-  <style>
-    :root{
-      --bg:#0b1220; --card:#111a2e; --text:#e7eefc; --muted:#a9b7d0;
-      --accent:#7aa2ff; --ok:#47d18c; --warn:#ffcf5a; --bad:#ff6b6b;
-      --code:#0a0f1c; --border:rgba(255,255,255,.08);
-    }
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial; background:var(--bg); color:var(--text); margin:0; line-height:1.55;}
-    .wrap{max-width:1100px; margin:0 auto; padding:28px 18px 60px;}
-    h1,h2,h3{line-height:1.2; margin:18px 0 10px;}
-    h1{font-size:32px;}
-    h2{font-size:22px; margin-top:26px;}
-    h3{font-size:18px; margin-top:18px;}
-    p{margin:10px 0;}
-    .card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 16px; margin:12px 0;}
-    .muted{color:var(--muted);}
-    .badge{display:inline-block; padding:3px 10px; border-radius:999px; border:1px solid var(--border); font-size:12px; margin-right:6px;}
-    .b-ok{background:rgba(71,209,140,.12); color:var(--ok); border-color:rgba(71,209,140,.28);}
-    .b-warn{background:rgba(255,207,90,.12); color:var(--warn); border-color:rgba(255,207,90,.28);}
-    .b-bad{background:rgba(255,107,107,.12); color:var(--bad); border-color:rgba(255,107,107,.28);}
-    a{color:var(--accent); text-decoration:none;}
-    a:hover{text-decoration:underline;}
-    ul{margin:8px 0 8px 20px;}
-    code, pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
-    pre{background:var(--code); border:1px solid var(--border); border-radius:12px; padding:12px; overflow:auto;}
-    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:12px;}
-    .col6{grid-column:span 6;}
-    .col12{grid-column:span 12;}
-    @media (max-width:900px){ .col6{grid-column:span 12;} }
-    .kpi{font-weight:700;}
-    .hr{height:1px; background:var(--border); margin:14px 0;}
-    .toc a{display:block; padding:4px 0;}
-    .small{font-size:13px;}
-  </style>
-</head>
 
 <body>
 <div class="wrap">
