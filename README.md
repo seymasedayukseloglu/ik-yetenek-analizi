@@ -3,7 +3,7 @@
   <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white" />
   <img src="https://img.shields.io/badge/Data_Mining-FF6F00?style=for-the-badge&logo=google-cloud&logoColor=white" />
   <br>
-  <h1>🚀 İnsan Kaynakları Yetenek Analizi</h1>
+  <h1> İnsan Kaynakları Yetenek Analizi</h1>
   <h3>Web Madenciliği Dersi Proje Çalışması</h3>
   <p><b>16.000+ İş İlanı Üzerinden Birliktelik Kuralları (Apriori) ile Beceri Madenciliği</b></p>
 </div>
