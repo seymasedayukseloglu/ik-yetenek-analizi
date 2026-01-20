@@ -170,3 +170,152 @@ df_birlesik = pd.concat(df_listesi, ignore_index=True)</code></pre>
 
 <br />
 <hr />
+
+<br />
+
+## 🧠 3. Analiz Öncesi Yorumların Seçilmesi ve Hazırlanması
+
+Veri setindeki 16.718 ilan arasından analize dahil edilecek yetkinliklerin belirlenmesi, projenin İK odaklı stratejik hedefleri doğrultusunda gerçekleştirilmiştir.
+
+### 🎯 3.1. Yetenek Kategorizasyonu
+<p>
+  Ham metin içerisinden ayıklanan anahtar kelimeler, anlamsal ilişkilerine göre üç ana gruba ayrılmıştır:
+</p>
+
+<ul>
+  <li><b>Teknik Beceriler (Hard Skills):</b> Python, SQL, Excel ve Agile metodolojileri.</li>
+  <li><b>Sosyal Beceriler (Soft Skills):</b> İletişim, Liderlik ve Takım Çalışması.</li>
+  <li><b>Karma Beceriler (Hybrid Skills):</b> Hem teknik hem sosyal süreçleri besleyen Analiz ve İngilizce yetkinlikleri.</li>
+</ul>
+
+### 🧪 3.2. Veri Filtreleme ve Örneklem
+<p>
+  Analizin doğruluğunu artırmak için sadece <b>İş Analisti, Veri Bilimci, Yazılım Geliştirici</b> ve <b>İnsan Kaynakları Uzmanı</b> gibi teknik ve idari pozisyonlar mercek altına alınmıştır. 
+  Yetenek matrisinde hiç beceri içermeyen (0 değerli) ilanlar, birliktelik kurallarının sapmasını önlemek amacıyla "Unicorn" analizinde kullanılmış ancak kural çıkarımında filtrelenmiştir.
+</p>
+
+<br />
+<hr />
+
+## ⚙️ 4. Kullanılan Model: Birliktelik Kuralları (Apriori)
+
+Bu çalışmada, yetkinlikler arasındaki gizli bağımlılıkları ve birlikte istenme eğilimlerini ölçmek için veri madenciliğinin güçlü algoritmalarından biri olan <b>Apriori Algoritması</b> tercih edilmiştir.
+
+### 🛠️ 4.1. Algoritma Mimarisi ve Uygulama
+<p>
+  Hazır kütüphanelerin ötesinde, proje ihtiyaçlarına özel <code>generate_frequent_itemsets</code> ve <code>generate_association_rules</code> fonksiyonları geliştirilerek 4'lü beceri kombinasyonlarına kadar tarama yapılmıştır.
+</p>
+
+<pre style="background-color: #f6f8fa; padding: 10px; border-radius: 4px;">
+<code># Projede Kullanılan Model Metrikleri
+min_support = 0.05    # Bir becerinin ilanlarda görülme eşiği
+min_confidence = 0.30 # A becerisi varken B'nin istenme olasılığı eşiği</code></pre>
+
+### 📈 4.2. Değerlendirme Metrikleri
+<p>Modelin başarısı şu üç temel metrik üzerinden ölçülmüştür:</p>
+
+<table style="width:100%; border-collapse: collapse; margin-top: 10px;">
+  <tr style="background-color: #f1f8ff;">
+    <th style="border: 1px solid #dfe2e5; padding: 8px;">Metrik</th>
+    <th style="border: 1px solid #dfe2e5; padding: 8px;">Tanım</th>
+    <th style="border: 1px solid #dfe2e5; padding: 8px;">Kritik Eşik</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dfe2e5; padding: 8px;"><b>Support</b></td>
+    <td style="border: 1px solid #dfe2e5; padding: 8px;">Kombinasyonun tüm ilanlar içindeki frekansı.</td>
+    <td style="border: 1px solid #dfe2e5; padding: 8px;">> 0.05</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dfe2e5; padding: 8px;"><b>Confidence</b></td>
+    <td style="border: 1px solid #dfe2e5; padding: 8px;">A becerisi talep edildiğinde B'nin de talep edilme güvenilirliği.</td>
+    <td style="border: 1px solid #dfe2e5; padding: 8px;">> 0.30</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #dfe2e5; padding: 8px;"><b>Lift</b></td>
+    <td style="border: 1px solid #dfe2e5; padding: 8px;">Beceriler arasındaki bağın tesadüf olup olmadığını gösteren çarpan.</td>
+    <td style="border: 1px solid #dfe2e5; padding: 8px;">> 1.0 (Anlamlı)</td>
+  </tr>
+</table>
+
+<br />
+<hr />
+
+<br />
+
+## 📊 5. BULGULAR VE ANALİZ
+
+Bu bölümde, 16.718 iş ilanı üzerinden elde edilen veriler; genel beceri dağılımı, teknik-sosyal kıyaslaması ve "Unicorn" profil analizi başlıkları altında incelenmiştir.
+
+<br />
+
+### 📈 5.1. Genel Beceri Talep Sıralaması
+<p align="center">
+  <img src="01_beceri_talebi.png" alt="Beceri Talep Sıralaması" width="800">
+</p>
+<p>
+  İlanların genelinde en çok talep edilen yetkinlikler incelendiğinde, ilk üç sıranın tamamen <b>Sosyal Beceriler</b> tarafından paylaşıldığı görülmektedir. 
+  <b>Takım Çalışması</b> 1.558 ilanla zirvede yer alırken, onu 1.237 ilanla <b>İletişim</b> takip etmektedir. Teknik tarafta ise <b>Excel</b> 491 ilanla en yaygın temel araç olarak öne çıkmaktadır.
+</p>
+
+<br />
+
+### ⚖️ 5.2. Teknik vs Sosyal Beceri Analizi (Eğitim Bütçesi Kararı)
+<p align="center">
+  <img src="02_teknik_sosyal_dagilim.png" alt="Teknik vs Sosyal Beceri Dağılımı" width="500">
+</p>
+<p>
+  Projenin ana sorularından biri olan "Eğitim bütçesi nereye harcanmalı?" sorusuna veriler net bir yanıt vermektedir:
+</p>
+<ul>
+  <li><b>Sosyal Beceriler (%88.0):</b> İlanların ezici çoğunluğu adaylardan yumuşak beceriler (soft skills) beklemektedir.</li>
+  <li><b>Teknik Beceriler (%12.0):</b> Teknik yetkinlikler (Python, SQL vb.) daha niş ve belirli pozisyonlar için saklı tutulmaktadır.</li>
+</ul>
+<blockquote style="background-color: #f1f8ff; border-left: 5px solid #0366d6; padding: 10px;">
+  <b>💡 Stratejik Karar:</b> Kurumsal eğitim bütçelerinin <b>%88'lik</b> bir oranla liderlik, iletişim ve ekip yönetimi gibi sosyal alanlara kaydırılması, iş gücü piyasasıyla tam uyum sağlayacaktır.
+</blockquote>
+
+<br />
+
+### 🦄 5.3. Unicorn (Bulunması İmkansız) Profil Analizi
+<p align="center">
+  <img src="03_beceri_sayisi_dagilimi.png" alt="İlan Başına Beceri Dağılımı" width="800">
+</p>
+<p>
+  Piyasada "her şeyi bilen aday" (Unicorn) arandığına dair yaygın kanı, analiz sonuçlarımızla çelişmektedir.
+</p>
+<ul>
+  <li><b>Sektör Standardı:</b> İlanların <b>%83.8</b>'i herhangi bir spesifik sert beceri kümesi belirtmeden genel yetkinliklere odaklanmaktadır.</li>
+  <li><b>Unicorn Oranı:</b> 6 ve üzeri teknik/sosyal beceriyi aynı anda talep eden "Unicorn" ilanların oranı sadece <b>%0.01</b>'dir (16.718 ilanda sadece 1 adet).</li>
+  <li><b>Sonuç:</b> İşveren beklentileri sektör standartlarıyla uyumlu ve adaylar açısından ulaşılabilir bir seviyededir.</li>
+</ul>
+
+<br />
+
+### 🔗 5.4. Birliktelik Kuralları (Apriori) Çıktıları
+<p align="center">
+  <img src="07_support_analizi.png" alt="Küme Boyutu Support Analizi" width="600">
+</p>
+<p>
+  Apriori algoritması çıktılarımızda, <b>Support: 0.05</b> eşiğinde en güçlü tekil kümelerin sosyal beceriler olduğu doğrulanmıştır. Çoklu beceri setlerinin (2'li ve 3'lü kombinasyonlar) support değerlerinin düşük kalması, ilanların beceri setlerini "paket" halinde istemek yerine, belirli ana yetkinliklere odaklandığını göstermektedir.
+</p>
+
+<br />
+<hr />
+
+## 💡 6. İşletme Açısından Stratejik ve Uygulanabilir Çıkarımlar
+
+<div style="padding: 15px; border: 1px dashed #28a745; border-radius: 6px;">
+  <ul>
+    <li><b>Yetenek Yönetimi:</b> İşe alım süreçlerinde teknik beceriler bir ön koşul olsa da, asıl eleme kriteri <b>%88 talep oranına sahip sosyal beceriler</b> olmalıdır.</li>
+    <li><b>İlan Optimizasyonu:</b> İlanlarda 6+ beceri istemek (Unicorn arayışı) aday havuzunu gereksiz yere daraltmaktadır. Piyasa standartı olan 2-3 odaklı beceri setine sadık kalınmalıdır.</li>
+    <li><b>Eğitim Planlama:</b> SQL ve Python gibi teknik eğitimler sadece ilgili departmanlara kanalize edilmeli, ancak <b>İletişim ve Takım Çalışması</b> eğitimleri şirket geneline yayılmalıdır.</li>
+  </ul>
+</div>
+
+<br />
+
+## 🏁 7. SONUÇ
+
+Bu çalışma, <b>Web Madenciliği</b> tekniklerinin İnsan Kaynakları stratejilerini nasıl rasyonelleştirebileceğini kanıtlamıştır. Selenium ve API yöntemleriyle toplanan 16.000+ ilan, piyasanın "sosyal beceri odaklı" bir yapıya büründüğünü ve işverenlerin sanılanın aksine "Unicorn" peşinde koşmadığını matematiksel olarak ortaya koymuştur. 
+
+---
