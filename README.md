@@ -1,36 +1,4 @@
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            margin: 40px;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        .highlight {
-            background-color: #f4f6f7;
-            padding: 15px;
-            border-left: 5px solid #3498db;
-        }
-        .result {
-            background-color: #eafaf1;
-            padding: 15px;
-            border-left: 5px solid #2ecc71;
-        }
-        .warning {
-            background-color: #fdecea;
-            padding: 15px;
-            border-left: 5px solid #e74c3c;
-        }
-    </style>
-</head>
-
 <body>
 
 <h1>İnsan Kaynakları Yetenek Analizi</h1>
