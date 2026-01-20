@@ -377,9 +377,4 @@ Bu proje, <b>Web Madenciliği</b> ve <b>Birliktelik Kuralları</b> tekniklerinin
 
 <br />
 
-<div align="right">
-  <p><b>Proje Sahibi:</b> [Adınız Soyadınız]</p>
-  <p><b>Ders:</b> Web Madenciliği 2026</p>
-</div>
-
 ---
