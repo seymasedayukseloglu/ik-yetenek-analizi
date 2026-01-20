@@ -41,6 +41,14 @@ Günümüz İK süreçlerinde "ideal aday" tanımı genellikle subjektif yorumla
 ### 🛠️ Analitik Yaklaşım:
 Veriler ham metin formatından **Binary (0/1)** matris formatına dönüştürülmüş, karma beceriler modellenmiş ve işveren beklentilerinin gerçekçiliği sektör standartlarıyla kıyaslanmıştır.
 
+<br />
+<div style="border-left: 4px solid #0366d6; padding-left: 15px;">
+  <h3 style="color: #0366d6;">🎯 Beceri Setlerinin Seçilme Gerekçesi</h3>
+  <p>
+    Seçilen beceriler, hem literatürde en sık geçen yetkinlikler olması hem de Türkiye iş gücü piyasasında farklı pozisyonlar için ortak beklentileri temsil etmesi nedeniyle analiz kapsamına alınmıştır.
+  </p>
+</div>
+
 ---
 
 ## 🛠️ 1. Veri Toplama ve Veri Setinin Oluşturulması
