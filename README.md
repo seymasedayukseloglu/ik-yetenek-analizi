@@ -115,3 +115,58 @@ with ThreadPoolExecutor(max_workers=15) as executor:
 
 <br />
 <hr />
+
+<br />
+
+## 🛠️ 2. Veri Ön İşleme ve Analize Hazırlık
+
+Veri madenciliği sürecinin en kritik aşaması olan ön işleme adımında; 5 farklı platformdan gelen heterojen veriler, tek bir standart veri kümesine dönüştürülmüştür. Bu süreçte Python'un <b>Pandas, Glob</b> ve <b>Re (Regex)</b> kütüphaneleri kullanılmıştır.
+
+<br />
+
+### 📂 2.1. Veri Birleştirme (Aggregation)
+<p>
+  Her platformun kendine özgü CSV formatı, <code>glob</code> kütüphanesi kullanılarak dinamik bir şekilde okunmuş ve tek bir DataFrame yapısında birleştirilmiştir. 
+  Toplamda <b>16.718</b> satırlık bir ham veri havuzu oluşturulmuştur.
+</p>
+
+<pre style="background-color: #f6f8fa; padding: 10px; border-radius: 4px;">
+<code># Çoklu Kaynak Birleştirme Algoritması
+dosyalar = glob.glob(os.path.join(klasor_yolu, "*.csv"))
+df_listesi = [pd.read_csv(f, encoding='utf-8-sig') for f in dosyalar]
+df_birlesik = pd.concat(df_listesi, ignore_index=True)</code></pre>
+
+<br />
+
+### 🧼 2.2. Veri Temizleme ve Normalizasyon
+<p>Verinin kalitesini artırmak için aşağıdaki <b>Data Cleaning</b> adımları uygulanmıştır:</p>
+
+<ul>
+  <li><b>Metin Standardizasyonu:</b> Tüm ilan metinleri küçük harfe (lower case) dönüştürülmüş ve özel karakterler temizlenmiştir.</li>
+  <li><b>Mükerrer Kayıt (De-duplication):</b> "Baslik" ve "Sirket" bazında yapılan kontrolle, farklı platformlarda yayınlanan <u>aynı ilanlar</u> elenmiştir.</li>
+  <li><b>Gürültü Giderme:</b> İlan içerisindeki HTML tagleri (&lt;p&gt;, &lt;br&gt;) <code>regex</code> kalıplarıyla ayıklanmıştır.</li>
+</ul>
+
+<br />
+
+### 🔢 2.3. Özellik Mühendisliği: Binary Matris Dönüşümü
+<p>
+  Birliktelik Kuralları (Apriori) analizi için metin tabanlı yetenekler, <b>One-Hot Encoding</b> mantığına benzer bir <b>Binary (0/1) Matrisine</b> dönüştürülmüştür.
+</p>
+
+<div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 15px; background-color: #f1f8ff;">
+  <p><b>🔍 Mantık:</b> Eğer bir ilan içerisinde "Python" kelimesi geçiyorsa ilgili sütun <code>1</code>, geçmiyorsa <code>0</code> değerini alır.</p>
+</div>
+
+<br />
+
+<table role="presentation" style="background-color: #fffbdd; border: 1px solid #d4a017; padding: 12px; border-radius: 6px; width: 100%;">
+  <tr>
+    <td>
+      <b>🚀 Önemli Çıktı:</b> Bu aşamanın sonunda her bir ilan için <b>"Beceri_Sayisi"</b> sütunu oluşturulmuştur. Bu sütun, ilerleyen aşamalardaki "Unicorn Aday Analizi" için temel veri kaynağını oluşturmaktadır.
+    </td>
+  </tr>
+</table>
+
+<br />
+<hr />
