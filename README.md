@@ -250,7 +250,8 @@ Bu bölümde, 16.718 iş ilanı üzerinden elde edilen veriler; genel beceri da�
 
 ### 📈 5.1. Genel Beceri Talep Sıralaması
 <p align="center">
-  <img src="01_beceri_talebi.png" alt="Beceri Talep Sıralaması" width="800">
+  <img src="01_<img width="1500" height="900" alt="01_beceri_talebi" src="https://github.com/user-attachments/assets/baf90fb5-e1c1-4746-ba87-fb34451504b0" />
+beceri_talebi.png" alt="Beceri Talep Sıralaması" width="800">
 </p>
 <p>
   İlanların genelinde en çok talep edilen yetkinlikler incelendiğinde, ilk üç sıranın tamamen <b>Sosyal Beceriler</b> tarafından paylaşıldığı görülmektedir. 
