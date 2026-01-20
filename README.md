@@ -29,17 +29,18 @@ Günümüz İK süreçlerinde "ideal aday" tanımı genellikle subjektif yorumla
 
 ### 🔍 Temel Sorular:
 
-1.  **Stratejik Eğitim Yatırımı:** Şirketler bütçelerini teknik araçlara (Python, SQL) mı yoksa sosyal yetkinliklere (İletişim, Liderlik) mi ayırmalı? 
+1. **Stratejik Eğitim Yatırımı:** Şirketler bütçelerini teknik araçlara (Python, SQL) mı yoksa sosyal yetkinliklere (İletişim, Liderlik) mi ayırmalı? 
     * *Bulgu:* İlanların **%88'inde** sosyal becerilerin baskın olması, yatırımın yönünü belirlemektedir.
   
-2.  **Unicorn Aday Efsanesi:** Sektörde "her şeyi bilen" (Unicorn) adaylar mı aranıyor? 
+2. **Unicorn Aday Efsanesi:** Sektörde "her şeyi bilen" (Unicorn) adaylar mı aranıyor? 
     * *Bulgu:* 6 ve üzeri beceri isteyen ilanların oranının **%0.01** olması, piyasanın sanılanın aksine daha rasyonel olduğunu göstermektedir.
 
-3.  **Yetenek Birliktelikleri:** Hangi yetkinlikler ayrılmaz bir bütün haline gelmiştir?
+3. **Yetenek Birliktelikleri:** Hangi yetkinlikler ayrılmaz bir bütün haline gelmiştir?
     * *Yöntem:* **Apriori Algoritması** kullanılarak beceriler arasındaki güven (confidence) ve destek (support) ilişkileri matematiksel olarak modellenmiştir.
 
 ### 🛠️ Analitik Yaklaşım:
 Veriler ham metin formatından **Binary (0/1)** matris formatına dönüştürülmüş, karma beceriler modellenmiş ve işveren beklentilerinin gerçekçiliği sektör standartlarıyla kıyaslanmıştır.
+
 <br />
 <div style="border-left: 4px solid #0366d6; padding-left: 15px;">
   <h3 style="color: #0366d6;">🎯 Beceri Setlerinin Seçilme Gerekçesi</h3>
@@ -55,8 +56,6 @@ Veriler ham metin formatından **Binary (0/1)** matris formatına dönüştürü
 Bu aşamada, projenin temelini oluşturan **16.718 adet** iş ilanı, çok kanallı bir veri toplama mimarisiyle elde edilmiştir. Veri toplama süreci; dinamik içerikli sayfalar için **Selenium**, hızlı veri aktarımı için **API** ve verimlilik için **Multi-threading** (paralel işleme) teknikleri kullanılarak optimize edilmiştir.
 
 ### 🌐 Veri Kaynakları ve Metodoloji
-
-Projede kullanılan veri kaynakları ve tercih edilen toplama yöntemleri aşağıdaki tabloda özetlenmiştir:
 
 | Kaynak Platform | Yöntem | Toplanan Veri | Teknik Detay |
 | :--- | :--- | :--- | :--- |
@@ -201,8 +200,7 @@ Veri setindeki 16.718 ilan arasından analize dahil edilecek yetkinliklerin beli
   Yetenek matrisinde hiç beceri içermeyen (0 değerli) ilanlar, birliktelik kurallarının sapmasını önlemek amacıyla "Unicorn" analizinde kullanılmış ancak kural çıkarımında filtrelenmiştir.
 </p>
 
-<br />
-<hr />
+---
 
 ## ⚙️ 4. Kullanılan Model: Birliktelik Kuralları (Apriori)
 
@@ -245,10 +243,6 @@ min_confidence = 0.30 # A becerisi varken B'nin istenme olasılığı eşiği</c
 </table>
 
 <br />
-<hr />
-
-<br />
-<br />
 <div style="background-color: #fff5f5; border: 1px solid #feb2b2; padding: 15px; border-radius: 6px;">
   <h3 style="color: #c53030; margin-top: 0;">⚠️ Apriori Analizinde Kural Sayısının Sınırlı Olmasının Nedeni</h3>
   <p>
@@ -256,6 +250,9 @@ min_confidence = 0.30 # A becerisi varken B'nin istenme olasılığı eşiği</c
     Bu durum, <b>modelin başarısızlığı değil</b>; aksine iş ilanlarının gerçekçi ve belirli bir amaca odaklı (over-specified olmayan) şekilde hazırlandığının somut bir göstergesidir.
   </p>
 </div>
+
+<br />
+<hr />
 
 ## 📊 5. BULGULAR VE ANALİZ
 
@@ -374,8 +371,7 @@ Bu çalışma, ham veriyi stratejik birer karar destek mekanizmasına dönüşt�
 
 <br />
 <hr />
-<br />
-<hr />
+
 <h2 style="color: #2b6cb0;">🔁 Tekrar Üretilebilirlik (Reproducibility)</h2>
 <p>
   Bu projede kullanılan tüm veri toplama ve analiz adımları modüler Python betikleri halinde yapılandırılmıştır. Aynı kodlar çalıştırıldığında benzer sonuçlar üretilecek şekilde tasarlanmıştır. 
@@ -383,6 +379,8 @@ Bu çalışma, ham veriyi stratejik birer karar destek mekanizmasına dönüşt�
 <pre style="background-color: #f6f8fa; padding: 10px; border-radius: 4px;">
 <code># Analiz sonuçlarının dışa aktarımı
 frequent_itemsets.to_csv("apriori_itemsets.csv", index=False)</code></pre>
+
+<br />
 
 ## 🏁 7. SONUÇ
 
@@ -400,8 +398,8 @@ Bu proje, <b>Web Madenciliği</b> ve <b>Birliktelik Kuralları</b> tekniklerinin
 </p>
 
 <br />
-<br />
 <hr />
+
 <table style="width: 100%; border-spacing: 20px;">
   <tr>
     <td style="width: 50%; vertical-align: top; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
