@@ -40,7 +40,6 @@ Günümüz İK süreçlerinde "ideal aday" tanımı genellikle subjektif yorumla
 
 ### 🛠️ Analitik Yaklaşım:
 Veriler ham metin formatından **Binary (0/1)** matris formatına dönüştürülmüş, karma beceriler modellenmiş ve işveren beklentilerinin gerçekçiliği sektör standartlarıyla kıyaslanmıştır.
-
 <br />
 <div style="border-left: 4px solid #0366d6; padding-left: 15px;">
   <h3 style="color: #0366d6;">🎯 Beceri Setlerinin Seçilme Gerekçesi</h3>
@@ -249,6 +248,14 @@ min_confidence = 0.30 # A becerisi varken B'nin istenme olasılığı eşiği</c
 <hr />
 
 <br />
+<br />
+<div style="background-color: #fff5f5; border: 1px solid #feb2b2; padding: 15px; border-radius: 6px;">
+  <h3 style="color: #c53030; margin-top: 0;">⚠️ Apriori Analizinde Kural Sayısının Sınırlı Olmasının Nedeni</h3>
+  <p>
+    Apriori algoritmasının sınırlı sayıda kural üretmesinin temel nedeni, veri setinde becerilerin düşük frekanslı ve çoğunlukla bağımsız şekilde talep edilmesidir. 
+    Bu durum, <b>modelin başarısızlığı değil</b>; aksine iş ilanlarının gerçekçi ve belirli bir amaca odaklı (over-specified olmayan) şekilde hazırlandığının somut bir göstergesidir.
+  </p>
+</div>
 
 ## 📊 5. BULGULAR VE ANALİZ
 
@@ -367,6 +374,15 @@ Bu çalışma, ham veriyi stratejik birer karar destek mekanizmasına dönüşt�
 
 <br />
 <hr />
+<br />
+<hr />
+<h2 style="color: #2b6cb0;">🔁 Tekrar Üretilebilirlik (Reproducibility)</h2>
+<p>
+  Bu projede kullanılan tüm veri toplama ve analiz adımları modüler Python betikleri halinde yapılandırılmıştır. Aynı kodlar çalıştırıldığında benzer sonuçlar üretilecek şekilde tasarlanmıştır. 
+</p>
+<pre style="background-color: #f6f8fa; padding: 10px; border-radius: 4px;">
+<code># Analiz sonuçlarının dışa aktarımı
+frequent_itemsets.to_csv("apriori_itemsets.csv", index=False)</code></pre>
 
 ## 🏁 7. SONUÇ
 
@@ -384,5 +400,27 @@ Bu proje, <b>Web Madenciliği</b> ve <b>Birliktelik Kuralları</b> tekniklerinin
 </p>
 
 <br />
+<br />
+<hr />
+<table style="width: 100%; border-spacing: 20px;">
+  <tr>
+    <td style="width: 50%; vertical-align: top; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
+      <h3 style="color: #4a5568;">⚠️ Çalışmanın Sınırlılıkları</h3>
+      <ul>
+        <li>İş ilanlarında bazı beceriler örtük (dolaylı) biçimde ifade edilmiş olabilir.</li>
+        <li>Beceri tespiti anahtar kelime tabanlı olduğu için bağlamsal anlam kaybı yaşanabilir.</li>
+        <li>Analiz, sadece ilan metinlerine dayanmakta olup fiili işe alım kararlarını birebir yansıtmayabilir.</li>
+      </ul>
+    </td>
+    <td style="width: 50%; vertical-align: top; background-color: #f0fff4; padding: 15px; border-radius: 8px;">
+      <h3 style="color: #2f855a;">🔮 Gelecek Çalışmalar</h3>
+      <ul>
+        <li>Anahtar kelime tabanlı çıkarım yerine LLM (BERT, GPT) tabanlı bağlamsal analiz.</li>
+        <li>IT, Finans ve İK gibi sektörlerin ayrı ayrı Apriori segmentasyonları.</li>
+        <li>Maaş bilgisi API üzerinden çekilerek beceri-ücret korelasyonu analizi.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ---
