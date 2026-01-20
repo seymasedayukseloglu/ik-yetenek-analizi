@@ -51,7 +51,7 @@ Veriler ham metin formatından **Binary (0/1)** matris formatına dönüştürü
 
 ---
 
-## 🛠️ 3. Veri Toplama ve Veri Setinin Oluşturulması
+##  3. Veri Toplama ve Veri Setinin Oluşturulması
 
 Bu aşamada, projenin temelini oluşturan **16.718 adet** iş ilanı, çok kanallı bir veri toplama mimarisiyle elde edilmiştir. Veri toplama süreci; dinamik içerikli sayfalar için **Selenium**, hızlı veri aktarımı için **API** ve verimlilik için **Multi-threading** (paralel işleme) teknikleri kullanılarak optimize edilmiştir.
 
@@ -179,7 +179,7 @@ df_birlesik = pd.concat(df_listesi, ignore_index=True)</code></pre>
 
 <br />
 
-##  5. Analiz Öncesi Yorumların Seçilmesi ve Hazırlanması
+## 5. Analiz Öncesi Yorumların Seçilmesi ve Hazırlanması
 
 Veri setindeki 16.718 ilan arasından analize dahil edilecek yetkinliklerin belirlenmesi, projenin İK odaklı stratejik hedefleri doğrultusunda gerçekleştirilmiştir.
 
