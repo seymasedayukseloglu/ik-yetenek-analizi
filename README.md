@@ -10,24 +10,24 @@
 
 ---
 
-## 📋 1. Proje Özeti ve Giriş
+##  1. Proje Özeti ve Giriş
 
 Bu çalışma, **Web Madenciliği** disiplininin veri toplama, temizleme ve anlamlandırma süreçlerini uçtan uca kapsamaktadır. Proje kapsamında, Türkiye’nin en büyük iş ilanı platformlarından (LinkedIn, Kariyer.net, Yenibiriş, Eleman.net vb.) **API** ve **Selenium** tabanlı web scraping yöntemleri kullanılarak toplam **16.718 adet** güncel iş ilanı çekilmiştir.
 
 Elde edilen devasa veri kümesi; Python kütüphaneleri ile standardize edilerek, iş dünyasının "yetenek haritasını" çıkarmak için analiz edilmiştir. Çalışma, sadece akademik bir egzersiz değil, İK profesyonelleri için veri temelli bir karar destek mekanizması niteliğindedir.
 
-### 👤 Geliştirici Bilgileri
+###  Geliştirici Bilgileri
 * **Hazırlayan:** Şeyma Seda Yükseloğlu
 * **Ders:** Web Madenciliği
 * **Teknoloji Yığını:** Python (Pandas, Selenium, Mlxtend), Apriori Algoritması, Veri Görselleştirme.
 
 ---
 
-## 🎯 2. Problem Tanımı ve Analiz Amacı
+##  2. Problem Tanımı ve Analiz Amacı
 
 Günümüz İK süreçlerinde "ideal aday" tanımı genellikle subjektif yorumlara dayanmaktadır. Bu proje, bu önyargıları kırarak aşağıdaki kritik iş sorularına **16.718 verinin gücüyle** yanıt aramaktadır:
 
-### 🔍 Temel Sorular:
+###  Temel Sorular:
 
 1. **Stratejik Eğitim Yatırımı:** Şirketler bütçelerini teknik araçlara (Python, SQL) mı yoksa sosyal yetkinliklere (İletişim, Liderlik) mi ayırmalı? 
     * *Bulgu:* İlanların **%88'inde** sosyal becerilerin baskın olması, yatırımın yönünü belirlemektedir.
@@ -38,12 +38,12 @@ Günümüz İK süreçlerinde "ideal aday" tanımı genellikle subjektif yorumla
 3. **Yetenek Birliktelikleri:** Hangi yetkinlikler ayrılmaz bir bütün haline gelmiştir?
     * *Yöntem:* **Apriori Algoritması** kullanılarak beceriler arasındaki güven (confidence) ve destek (support) ilişkileri matematiksel olarak modellenmiştir.
 
-### 🛠️ Analitik Yaklaşım:
+###  Analitik Yaklaşım:
 Veriler ham metin formatından **Binary (0/1)** matris formatına dönüştürülmüş, karma beceriler modellenmiş ve işveren beklentilerinin gerçekçiliği sektör standartlarıyla kıyaslanmıştır.
 
 <br />
 <div style="border-left: 4px solid #0366d6; padding-left: 15px;">
-  <h3 style="color: #0366d6;">🎯 Beceri Setlerinin Seçilme Gerekçesi</h3>
+  <h3 style="color: #0366d6;"> Beceri Setlerinin Seçilme Gerekçesi</h3>
   <p>
     Seçilen beceriler, hem literatürde en sık geçen yetkinlikler olması hem de Türkiye iş gücü piyasasında farklı pozisyonlar için ortak beklentileri temsil etmesi nedeniyle analiz kapsamına alınmıştır.
   </p>
@@ -51,11 +51,11 @@ Veriler ham metin formatından **Binary (0/1)** matris formatına dönüştürü
 
 ---
 
-## 🛠️ 1. Veri Toplama ve Veri Setinin Oluşturulması
+## 🛠️ 3. Veri Toplama ve Veri Setinin Oluşturulması
 
 Bu aşamada, projenin temelini oluşturan **16.718 adet** iş ilanı, çok kanallı bir veri toplama mimarisiyle elde edilmiştir. Veri toplama süreci; dinamik içerikli sayfalar için **Selenium**, hızlı veri aktarımı için **API** ve verimlilik için **Multi-threading** (paralel işleme) teknikleri kullanılarak optimize edilmiştir.
 
-### 🌐 Veri Kaynakları ve Metodoloji
+###  Veri Kaynakları ve Metodoloji
 
 | Kaynak Platform | Yöntem | Toplanan Veri | Teknik Detay |
 | :--- | :--- | :--- | :--- |
@@ -69,10 +69,10 @@ Bu aşamada, projenin temelini oluşturan **16.718 adet** iş ilanı, çok kanal
 
 <br />
 
-### 💻 1.3. Teknik Uygulama Detayları
+###  3.1. Teknik Uygulama Detayları
 
 <div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 15px; background-color: #fafbfc;">
-  <h4 style="color: #0366d6;">🛡️ A. Dinamik İçerik Yönetimi ve Bot Güvenliği</h4>
+  <h4 style="color: #0366d6;"> A. Dinamik İçerik Yönetimi ve Bot Güvenliği</h4>
   <p>
     Kariyer.net ve LinkedIn gibi yüksek güvenlikli platformlarda karşılaşılan bot korumalarını aşmak için <b>Undetected Chromedriver (UC)</b> kütüphanesi entegre edilmiştir. 
     İşlem sırasında <code>time.sleep()</code> stratejileri ile insan davranışları simüle edilmiş ve veri kaybını önlemek amacıyla her 10 kayıtta bir <b>manuel checkpoint</b> oluşturularak veri güvenliği sağlanmıştır.
@@ -82,7 +82,7 @@ Bu aşamada, projenin temelini oluşturan **16.718 adet** iş ilanı, çok kanal
 <br />
 
 <div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 15px; background-color: #fafbfc;">
-  <h4 style="color: #0366d6;">⚡ B. Performans Optimizasyonu (Multi-threading)</h4>
+  <h4 style="color: #0366d6;"> B. Performans Optimizasyonu (Multi-threading)</h4>
   <p>
     Eleman.net ve Yenibiriş gibi binlerce ilanın detaylı taranması gereken aşamalarda, standart sıralı çekme mimarisi yerine Python'un <b>concurrent.futures</b> modülü kullanılmıştır.
   </p>
@@ -99,7 +99,7 @@ with ThreadPoolExecutor(max_workers=15) as executor:
 <br />
 
 <div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 15px; background-color: #fafbfc;">
-  <h4 style="color: #0366d6;">🧠 C. Akıllı Beceri Ayıklama (Keyword Mapping)</h4>
+  <h4 style="color: #0366d6;"> C. Akıllı Beceri Ayıklama (Keyword Mapping)</h4>
   <p>
     Henüz ham veri aşamasındayken, ilan metinleri içerisinde geçen yetkinlikler önceden tanımlanmış geniş kapsamlı bir <b>yetenek sözlüğü (dictionary)</b> üzerinden taranmıştır.
     Bu aşamada <code>RegEx</code> (Düzenli İfadeler) kullanılarak metinler normalize edilmiş ve yapılandırılmamış veri seti, istatistiksel analize uygun bir <b>Binary (0/1) Matrisine</b> dönüştürülmüştür.
@@ -111,7 +111,7 @@ with ThreadPoolExecutor(max_workers=15) as executor:
 <table role="presentation" style="background-color: #fffbdd; border: 1px solid #d4a017; padding: 12px; border-radius: 6px; width: 100%;">
   <tr>
     <td style="vertical-align: middle; padding-right: 10px;">
-      <span style="font-size: 20px;">📌</span>
+      <span style="font-size: 20px;"></span>
     </td>
     <td>
       <b>Entegrasyon Notu:</b> Toplanan tüm ham veriler; <i>İlan Başlığı, Şirket, Lokasyon, Teknik Beceriler</i> ve <i>Sosyal Beceriler</i> kolonları altında birleştirilerek <code>ik_yetenek_analizi_veriseti.csv</code> ismiyle nihai analize hazır hale getirilmiştir.
@@ -124,13 +124,13 @@ with ThreadPoolExecutor(max_workers=15) as executor:
 
 <br />
 
-## 🛠️ 2. Veri Ön İşleme ve Analize Hazırlık
+##  4. Veri Ön İşleme ve Analize Hazırlık
 
 Veri madenciliği sürecinin en kritik aşaması olan ön işleme adımında; 5 farklı platformdan gelen heterojen veriler, tek bir standart veri kümesine dönüştürülmüştür. Bu süreçte Python'un <b>Pandas, Glob</b> ve <b>Re (Regex)</b> kütüphaneleri kullanılmıştır.
 
 <br />
 
-### 📂 2.1. Veri Birleştirme (Aggregation)
+###  4.1. Veri Birleştirme (Aggregation)
 <p>
   Her platformun kendine özgü CSV formatı, <code>glob</code> kütüphanesi kullanılarak dinamik bir şekilde okunmuş ve tek bir DataFrame yapısında birleştirilmiştir. 
   Toplamda <b>16.718</b> satırlık bir ham veri havuzu oluşturulmuştur.
@@ -144,7 +144,7 @@ df_birlesik = pd.concat(df_listesi, ignore_index=True)</code></pre>
 
 <br />
 
-### 🧼 2.2. Veri Temizleme ve Normalizasyon
+###  4.2. Veri Temizleme ve Normalizasyon
 <p>Verinin kalitesini artırmak için aşağıdaki <b>Data Cleaning</b> adımları uygulanmıştır:</p>
 
 <ul>
@@ -155,13 +155,13 @@ df_birlesik = pd.concat(df_listesi, ignore_index=True)</code></pre>
 
 <br />
 
-### 🔢 2.3. Özellik Mühendisliği: Binary Matris Dönüşümü
+###  4.3. Özellik Mühendisliği: Binary Matris Dönüşümü
 <p>
   Birliktelik Kuralları (Apriori) analizi için metin tabanlı yetenekler, <b>One-Hot Encoding</b> mantığına benzer bir <b>Binary (0/1) Matrisine</b> dönüştürülmüştür.
 </p>
 
 <div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 15px; background-color: #f1f8ff;">
-  <p><b>🔍 Mantık:</b> Eğer bir ilan içerisinde "Python" kelimesi geçiyorsa ilgili sütun <code>1</code>, geçmiyorsa <code>0</code> değerini alır.</p>
+  <p><b> Mantık:</b> Eğer bir ilan içerisinde "Python" kelimesi geçiyorsa ilgili sütun <code>1</code>, geçmiyorsa <code>0</code> değerini alır.</p>
 </div>
 
 <br />
@@ -169,7 +169,7 @@ df_birlesik = pd.concat(df_listesi, ignore_index=True)</code></pre>
 <table role="presentation" style="background-color: #fffbdd; border: 1px solid #d4a017; padding: 12px; border-radius: 6px; width: 100%;">
   <tr>
     <td>
-      <b>🚀 Önemli Çıktı:</b> Bu aşamanın sonunda her bir ilan için <b>"Beceri_Sayisi"</b> sütunu oluşturulmuştur. Bu sütun, ilerleyen aşamalardaki "Unicorn Aday Analizi" için temel veri kaynağını oluşturmaktadır.
+      <b> Önemli Çıktı:</b> Bu aşamanın sonunda her bir ilan için <b>"Beceri_Sayisi"</b> sütunu oluşturulmuştur. Bu sütun, ilerleyen aşamalardaki "Unicorn Aday Analizi" için temel veri kaynağını oluşturmaktadır.
     </td>
   </tr>
 </table>
@@ -179,11 +179,11 @@ df_birlesik = pd.concat(df_listesi, ignore_index=True)</code></pre>
 
 <br />
 
-## 🧠 3. Analiz Öncesi Yorumların Seçilmesi ve Hazırlanması
+##  5. Analiz Öncesi Yorumların Seçilmesi ve Hazırlanması
 
 Veri setindeki 16.718 ilan arasından analize dahil edilecek yetkinliklerin belirlenmesi, projenin İK odaklı stratejik hedefleri doğrultusunda gerçekleştirilmiştir.
 
-### 🎯 3.1. Yetenek Kategorizasyonu
+### 5.1. Yetenek Kategorizasyonu
 <p>
   Ham metin içerisinden ayıklanan anahtar kelimeler, anlamsal ilişkilerine göre üç ana gruba ayrılmıştır:
 </p>
@@ -194,7 +194,7 @@ Veri setindeki 16.718 ilan arasından analize dahil edilecek yetkinliklerin beli
   <li><b>Karma Beceriler (Hybrid Skills):</b> Hem teknik hem sosyal süreçleri besleyen Analiz ve İngilizce yetkinlikleri.</li>
 </ul>
 
-### 🧪 3.2. Veri Filtreleme ve Örneklem
+###  5.2. Veri Filtreleme ve Örneklem
 <p>
   Analizin doğruluğunu artırmak için sadece <b>İş Analisti, Veri Bilimci, Yazılım Geliştirici</b> ve <b>İnsan Kaynakları Uzmanı</b> gibi teknik ve idari pozisyonlar mercek altına alınmıştır. 
   Yetenek matrisinde hiç beceri içermeyen (0 değerli) ilanlar, birliktelik kurallarının sapmasını önlemek amacıyla "Unicorn" analizinde kullanılmış ancak kural çıkarımında filtrelenmiştir.
@@ -202,11 +202,11 @@ Veri setindeki 16.718 ilan arasından analize dahil edilecek yetkinliklerin beli
 
 ---
 
-## ⚙️ 4. Kullanılan Model: Birliktelik Kuralları (Apriori)
+## 6. Kullanılan Model: Birliktelik Kuralları (Apriori)
 
 Bu çalışmada, yetkinlikler arasındaki gizli bağımlılıkları ve birlikte istenme eğilimlerini ölçmek için veri madenciliğinin güçlü algoritmalarından biri olan <b>Apriori Algoritması</b> tercih edilmiştir.
 
-### 🛠️ 4.1. Algoritma Mimarisi ve Uygulama
+###  6.1. Algoritma Mimarisi ve Uygulama
 <p>
   Hazır kütüphanelerin ötesinde, proje ihtiyaçlarına özel <code>generate_frequent_itemsets</code> ve <code>generate_association_rules</code> fonksiyonları geliştirilerek 4'lü beceri kombinasyonlarına kadar tarama yapılmıştır.
 </p>
@@ -216,7 +216,7 @@ Bu çalışmada, yetkinlikler arasındaki gizli bağımlılıkları ve birlikte 
 min_support = 0.05    # Bir becerinin ilanlarda görülme eşiği
 min_confidence = 0.30 # A becerisi varken B'nin istenme olasılığı eşiği</code></pre>
 
-### 📈 4.2. Değerlendirme Metrikleri
+### 6.2. Değerlendirme Metrikleri
 <p>Modelin başarısı şu üç temel metrik üzerinden ölçülmüştür:</p>
 
 <table style="width:100%; border-collapse: collapse; margin-top: 10px;">
@@ -244,7 +244,7 @@ min_confidence = 0.30 # A becerisi varken B'nin istenme olasılığı eşiği</c
 
 <br />
 <div style="background-color: #fff5f5; border: 1px solid #feb2b2; padding: 15px; border-radius: 6px;">
-  <h3 style="color: #c53030; margin-top: 0;">⚠️ Apriori Analizinde Kural Sayısının Sınırlı Olmasının Nedeni</h3>
+  <h3 style="color: #c53030; margin-top: 0;"> Apriori Analizinde Kural Sayısının Sınırlı Olmasının Nedeni</h3>
   <p>
     Apriori algoritmasının sınırlı sayıda kural üretmesinin temel nedeni, veri setinde becerilerin düşük frekanslı ve çoğunlukla bağımsız şekilde talep edilmesidir. 
     Bu durum, <b>modelin başarısızlığı değil</b>; aksine iş ilanlarının gerçekçi ve belirli bir amaca odaklı (over-specified olmayan) şekilde hazırlandığının somut bir göstergesidir.
@@ -254,13 +254,13 @@ min_confidence = 0.30 # A becerisi varken B'nin istenme olasılığı eşiği</c
 <br />
 <hr />
 
-## 📊 5. BULGULAR VE ANALİZ
+## 7. BULGULAR VE ANALİZ
 
 Bu bölüm, 16.718 iş ilanı üzerinden gerçekleştirilen veri madenciliği süreçlerinin somut çıktılarını ve bu çıktıların İnsan Kaynakları perspektifinden yorumlarını içermektedir.
 
 <br />
 
-### 📈 5.1. Genel Beceri Talep Sıralaması
+### 7.1. Genel Beceri Talep Sıralaması
 <div align="center">
   <img src="outputs/01_beceri_talebi.png" alt="Beceri Talep Sıralaması" width="850">
 </div>
@@ -271,7 +271,7 @@ Bu bölüm, 16.718 iş ilanı üzerinden gerçekleştirilen veri madenciliği s�
 
 <br />
 
-### ⚖️ 5.2. Teknik vs Sosyal Beceri Dağılımı
+### 7.2. Teknik vs Sosyal Beceri Dağılımı
 <div align="center">
   <img src="outputs/02_teknik_sosyal_dagilim.png" alt="Teknik vs Sosyal Beceri Dağılımı" width="500">
 </div>
@@ -282,7 +282,7 @@ Bu bölüm, 16.718 iş ilanı üzerinden gerçekleştirilen veri madenciliği s�
 
 <br />
 
-### 🦄 5.3. Unicorn Profil ve Beceri Yoğunluğu Analizi
+### 7.3. Unicorn Profil ve Beceri Yoğunluğu Analizi
 <div align="center">
   <img src="outputs/03_beceri_sayisi_dagilimi.png" alt="İlan Başına Beceri Sayısı" width="850">
   <br />
@@ -298,7 +298,7 @@ Bu bölüm, 16.718 iş ilanı üzerinden gerçekleştirilen veri madenciliği s�
 
 <br />
 
-### 💻 5.4. Kategori Bazlı Detaylı Dağılımlar
+### 7.4. Kategori Bazlı Detaylı Dağılımlar
 <div align="center">
   <img src="outputs/05_teknik_beceriler.png" alt="Teknik Beceriler Dağılımı" width="450" style="display:inline-block;">
   <img src="outputs/06_sosyal_beceriler.png" alt="Sosyal Beceriler Dağılımı" width="450" style="display:inline-block;">
@@ -310,7 +310,7 @@ Bu bölüm, 16.718 iş ilanı üzerinden gerçekleştirilen veri madenciliği s�
 
 <br />
 
-### 🔗 5.5. Apriori Support Analizi
+### 7.5. Apriori Support Analizi
 <div align="center">
   <img src="outputs/07_support_analizi.png" alt="Support Analizi" width="600">
 </div>
@@ -324,23 +324,23 @@ Bu bölüm, 16.718 iş ilanı üzerinden gerçekleştirilen veri madenciliği s�
 
 <br />
 
-## 💡 6. İşletme Açısından Stratejik ve Uygulanabilir Çıkarımlar
+## 8. İşletme Açısından Stratejik ve Uygulanabilir Çıkarımlar
 
 Bu çalışma, ham veriyi stratejik birer karar destek mekanizmasına dönüştürmüştür. Elde edilen bulgular ışığında, modern İK departmanları için şu somut aksiyon planları önerilmektedir:
 
-### 🎯 6.1. Yetenek Yönetimi ve Seçme-Yerleştirme Revizyonu
+### 8.1. Yetenek Yönetimi ve Seçme-Yerleştirme Revizyonu
 <ul>
   <li><b>Eleme Kriterlerinin Önceliklendirilmesi:</b> Teknik beceriler (Python, SQL vb.) aday havuzunu daraltan "geçerlik" kriterleri olarak kullanılmalı; ancak mülakat ve nihai seçim süreçlerinde <b>%88 talep oranına sahip sosyal beceriler</b> (İletişim, Liderlik) ana belirleyici olmalıdır.</li>
   <li><b>Beceri Ağırlıklı Puanlama:</b> İşe alım algoritmalarında sosyal yetkinliklerin ağırlığı, teknik yetkinliklerin en az 3 katı olacak şekilde güncellenmelidir.</li>
 </ul>
 
-### 📈 6.2. İlan Optimizasyonu ve Aday Deneyimi
+### 8.2. İlan Optimizasyonu ve Aday Deneyimi
 <ul>
   <li><b>"Unicorn" Tuzağından Kaçınma:</b> Analiz, 6 ve üzeri beceri isteyen ilanların oranının <b>%0.01</b> olduğunu göstermiştir. Şirketler, "her şeyi bilen" aday arayışının aday havuzunu <b>%90'a varan oranlarda</b> daralttığını fark etmeli ve ilanlarını piyasa standartı olan <b>2-3 odaklı beceri seti</b> etrafında kurmalıdır.</li>
   <li><b>Dil ve Kültür Odaklı İlanlar:</b> İngilizce ve Takım Çalışması arasındaki güçlü birliktelik göz önüne alındığında, global projeler için bu iki yetkinlik "paket" olarak ilan metinlerine yansıtılmalıdır.</li>
 </ul>
 
-### 🎓 6.3. Veri Güdümlü Eğitim Planlama (L&D Strategy)
+### 8.3. Veri Güdümlü Eğitim Planlama (L&D Strategy)
 <ul>
   <li><b>Bütçe Tahsisi:</b> Eğitim bütçelerinin büyük bir kısmı şirket geneline yayılacak <b>Çevik Yönetim (Agile)</b>, <b>Etkili İletişim</b> ve <b>Kriz Yönetimi</b> eğitimlerine aktarılmalıdır.</li>
   <li><b>Departman Bazlı Teknik Odak:</b> SQL, Python ve ileri düzey Excel eğitimleri, şirket geneli yerine sadece veri ile doğrudan temas kuran "Business Intelligence" ve "Data" departmanlarına kanalize edilerek kaynak verimliliği sağlanmalıdır.</li>
@@ -372,7 +372,7 @@ Bu çalışma, ham veriyi stratejik birer karar destek mekanizmasına dönüşt�
 <br />
 <hr />
 
-<h2 style="color: #2b6cb0;">🔁 Tekrar Üretilebilirlik (Reproducibility)</h2>
+<h2 style="color: #2b6cb0;"> Tekrar Üretilebilirlik (Reproducibility)</h2>
 <p>
   Bu projede kullanılan tüm veri toplama ve analiz adımları modüler Python betikleri halinde yapılandırılmıştır. Aynı kodlar çalıştırıldığında benzer sonuçlar üretilecek şekilde tasarlanmıştır. 
 </p>
@@ -382,11 +382,11 @@ frequent_itemsets.to_csv("apriori_itemsets.csv", index=False)</code></pre>
 
 <br />
 
-## 🏁 7. SONUÇ
+## 9. SONUÇ
 
 Bu proje, <b>Web Madenciliği</b> ve <b>Birliktelik Kuralları</b> tekniklerinin İnsan Kaynakları disiplininde sadece operasyonel değil, aynı zamanda stratejik bir devrim yaratabileceğini kanıtlamıştır. 
 
-### 🔑 Temel Çıkarımlar:
+###  Temel Çıkarımlar:
 <ol>
   <li><b>Piyasa Gerçekliği:</b> Selenium ve API yöntemleriyle 5 farklı platformdan toplanan <b>16.718 ilan</b>, Türkiye iş gücü piyasasının sanılanın aksine "insan odaklı" ve rasyonel bir çizgide olduğunu ortaya koymuştur.</li>
   <li><b>Matematiksel Doğrulama:</b> Apriori algoritması ile yapılan analizler, becerilerin rastgele değil, belirli bir endüstriyel mantık çerçevesinde kümelendiğini göstermiştir.</li>
@@ -403,7 +403,7 @@ Bu proje, <b>Web Madenciliği</b> ve <b>Birliktelik Kuralları</b> tekniklerinin
 <table style="width: 100%; border-spacing: 20px;">
   <tr>
     <td style="width: 50%; vertical-align: top; background-color: #f8f9fa; padding: 15px; border-radius: 8px;">
-      <h3 style="color: #4a5568;">⚠️ Çalışmanın Sınırlılıkları</h3>
+      <h3 style="color: #4a5568;"> Çalışmanın Sınırlılıkları</h3>
       <ul>
         <li>İş ilanlarında bazı beceriler örtük (dolaylı) biçimde ifade edilmiş olabilir.</li>
         <li>Beceri tespiti anahtar kelime tabanlı olduğu için bağlamsal anlam kaybı yaşanabilir.</li>
@@ -411,7 +411,7 @@ Bu proje, <b>Web Madenciliği</b> ve <b>Birliktelik Kuralları</b> tekniklerinin
       </ul>
     </td>
     <td style="width: 50%; vertical-align: top; background-color: #f0fff4; padding: 15px; border-radius: 8px;">
-      <h3 style="color: #2f855a;">🔮 Gelecek Çalışmalar</h3>
+      <h3 style="color: #2f855a;"> Gelecek Çalışmalar</h3>
       <ul>
         <li>Anahtar kelime tabanlı çıkarım yerine LLM (BERT, GPT) tabanlı bağlamsal analiz.</li>
         <li>IT, Finans ve İK gibi sektörlerin ayrı ayrı Apriori segmentasyonları.</li>
