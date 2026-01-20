@@ -244,60 +244,67 @@ min_confidence = 0.30 # A becerisi varken B'nin istenme olasılığı eşiği</c
 
 ## 📊 5. BULGULAR VE ANALİZ
 
-Bu bölümde, 16.718 iş ilanı üzerinden elde edilen veriler; genel beceri dağılımı, teknik-sosyal kıyaslaması ve "Unicorn" profil analizi başlıkları altında incelenmiştir.
+Bu bölüm, 16.718 iş ilanı üzerinden gerçekleştirilen veri madenciliği süreçlerinin somut çıktılarını ve bu çıktıların İnsan Kaynakları perspektifinden yorumlarını içermektedir.
 
 <br />
 
 ### 📈 5.1. Genel Beceri Talep Sıralaması
-<p align="center">
-  <img src="01_<img width="1500" height="900" alt="01_beceri_talebi" src="https://github.com/user-attachments/assets/baf90fb5-e1c1-4746-ba87-fb34451504b0" />
-beceri_talebi.png" alt="Beceri Talep Sıralaması" width="800">
-</p>
+<div align="center">
+  <img src="outputs/01_beceri_talebi.png" alt="Beceri Talep Sıralaması" width="850">
+</div>
 <p>
-  İlanların genelinde en çok talep edilen yetkinlikler incelendiğinde, ilk üç sıranın tamamen <b>Sosyal Beceriler</b> tarafından paylaşıldığı görülmektedir. 
-  <b>Takım Çalışması</b> 1.558 ilanla zirvede yer alırken, onu 1.237 ilanla <b>İletişim</b> takip etmektedir. Teknik tarafta ise <b>Excel</b> 491 ilanla en yaygın temel araç olarak öne çıkmaktadır.
+  Veri setindeki ilanlar genel olarak incelendiğinde, işverenlerin adaylardan beklentilerinin başında <b>Sosyal Beceriler</b> gelmektedir. 
+  <b>Takım Çalışması</b> (1.558 ilan) ve <b>İletişim</b> (1.237 ilan) en çok aranan yetkinlikler olarak zirvede yer alırken; teknik tarafta <b>Excel</b> (491 ilan) ve <b>Analiz</b> (616 ilan) yetkinlikleri temel gereksinimler olarak öne çıkmaktadır.
 </p>
 
 <br />
 
-### ⚖️ 5.2. Teknik vs Sosyal Beceri Analizi (Eğitim Bütçesi Kararı)
-<p align="center">
-  <img src="02_teknik_sosyal_dagilim.png" alt="Teknik vs Sosyal Beceri Dağılımı" width="500">
-</p>
+### ⚖️ 5.2. Teknik vs Sosyal Beceri Dağılımı
+<div align="center">
+  <img src="outputs/02_teknik_sosyal_dagilim.png" alt="Teknik vs Sosyal Beceri Dağılımı" width="500">
+</div>
 <p>
-  Projenin ana sorularından biri olan "Eğitim bütçesi nereye harcanmalı?" sorusuna veriler net bir yanıt vermektedir:
+  Piyasanın genel eğilimini anlamak adına yapılan kategori bazlı analizde, talebin <b>%76.4 oranında Sosyal Becerilerde</b> yoğunlaştığı görülmektedir. 
+  Teknik becerilerin %10.4 gibi düşük bir oranda kalması, teknik bilginin bir "eşik" olduğunu ancak işe alımda asıl farkı sosyal yetkinliklerin yarattığını matematiksel olarak kanıtlamaktadır.
 </p>
-<ul>
-  <li><b>Sosyal Beceriler (%88.0):</b> İlanların ezici çoğunluğu adaylardan yumuşak beceriler (soft skills) beklemektedir.</li>
-  <li><b>Teknik Beceriler (%12.0):</b> Teknik yetkinlikler (Python, SQL vb.) daha niş ve belirli pozisyonlar için saklı tutulmaktadır.</li>
-</ul>
-<blockquote style="background-color: #f1f8ff; border-left: 5px solid #0366d6; padding: 10px;">
-  <b>💡 Stratejik Karar:</b> Kurumsal eğitim bütçelerinin <b>%88'lik</b> bir oranla liderlik, iletişim ve ekip yönetimi gibi sosyal alanlara kaydırılması, iş gücü piyasasıyla tam uyum sağlayacaktır.
-</blockquote>
 
 <br />
 
-### 🦄 5.3. Unicorn (Bulunması İmkansız) Profil Analizi
-<p align="center">
-  <img src="03_beceri_sayisi_dagilimi.png" alt="İlan Başına Beceri Dağılımı" width="800">
-</p>
+### 🦄 5.3. Unicorn Profil ve Beceri Yoğunluğu Analizi
+<div align="center">
+  <img src="outputs/03_beceri_sayisi_dagilimi.png" alt="İlan Başına Beceri Sayısı" width="850">
+  <br />
+  <img src="outputs/04_unicorn_analizi.png" alt="Unicorn Analizi" width="500">
+</div>
 <p>
-  Piyasada "her şeyi bilen aday" (Unicorn) arandığına dair yaygın kanı, analiz sonuçlarımızla çelişmektedir.
+  <b>Unicorn (Bulunması İmkansız)</b> aday profili analizinde çarpıcı bir sonuç elde edilmiştir:
 </p>
 <ul>
-  <li><b>Sektör Standardı:</b> İlanların <b>%83.8</b>'i herhangi bir spesifik sert beceri kümesi belirtmeden genel yetkinliklere odaklanmaktadır.</li>
-  <li><b>Unicorn Oranı:</b> 6 ve üzeri teknik/sosyal beceriyi aynı anda talep eden "Unicorn" ilanların oranı sadece <b>%0.01</b>'dir (16.718 ilanda sadece 1 adet).</li>
-  <li><b>Sonuç:</b> İşveren beklentileri sektör standartlarıyla uyumlu ve adaylar açısından ulaşılabilir bir seviyededir.</li>
+  <li><b>Mod ve Medyan:</b> İlanların büyük bir çoğunluğu (14.000+) ilan metninde spesifik bir beceri kümesi belirtmemektedir.</li>
+  <li><b>Gerçekçi Beklenti:</b> 6 ve üzeri beceri isteyen "Unicorn" ilanların oranı <b>%0.01</b>'dir. Bu durum, piyasada adayların üzerindeki "her şeyi bilme" baskısının veri bazında bir karşılığı olmadığını göstermektedir.</li>
 </ul>
 
 <br />
 
-### 🔗 5.4. Birliktelik Kuralları (Apriori) Çıktıları
-<p align="center">
-  <img src="07_support_analizi.png" alt="Küme Boyutu Support Analizi" width="600">
-</p>
+### 💻 5.4. Kategori Bazlı Detaylı Dağılımlar
+<div align="center">
+  <img src="outputs/05_teknik_beceriler.png" alt="Teknik Beceriler Dağılımı" width="450" style="display:inline-block;">
+  <img src="outputs/06_sosyal_beceriler.png" alt="Sosyal Beceriler Dağılımı" width="450" style="display:inline-block;">
+</div>
 <p>
-  Apriori algoritması çıktılarımızda, <b>Support: 0.05</b> eşiğinde en güçlü tekil kümelerin sosyal beceriler olduğu doğrulanmıştır. Çoklu beceri setlerinin (2'li ve 3'lü kombinasyonlar) support değerlerinin düşük kalması, ilanların beceri setlerini "paket" halinde istemek yerine, belirli ana yetkinliklere odaklandığını göstermektedir.
+  Teknik beceriler içinde <b>Excel</b> mutlak hakimiyete sahipken; sosyal beceriler tarafında <b>Liderlik, İletişim ve Takım Çalışması</b> dengeli bir dağılım sergilemektedir. 
+  Bu durum, teknik yatırımın araç bazlı (Excel/SQL), sosyal yatırımın ise karakter bazlı olması gerektiğini ortaya koymaktadır.
+</p>
+
+<br />
+
+### 🔗 5.5. Apriori Support Analizi
+<div align="center">
+  <img src="outputs/07_support_analizi.png" alt="Support Analizi" width="600">
+</div>
+<p>
+  Birliktelik kuralları için yapılan support analizinde, 1 boyutlu (tekil) beceri kümelerinin ortalama support değeri <b>%7.0</b> civarındadır. 
+  Çoklu beceri kombinasyonlarının bu eşiğin altında kalması, işverenlerin adaylardan "her şeyi bir arada" istemek yerine, belirli ve odaklanmış yetkinlik setleri talep ettiğini doğrulamaktadır.
 </p>
 
 <br />
