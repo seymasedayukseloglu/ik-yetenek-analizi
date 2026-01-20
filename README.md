@@ -23,26 +23,6 @@
     </ul>
   </div>
 
-  <div class="card toc">
-    <h2>İçindekiler</h2>
-    <a href="#giris">GİRİŞ</a>
-    <a href="#veri-toplama">1. Veri Toplama ve Veri Setinin Oluşturulması</a>
-    <a href="#ornek1">Örnek 1: Himalayas Jobs API ile Veri Toplama</a>
-    <a href="#on-isleme">2. Veri Ön İşleme ve Analize Hazırlık</a>
-    <a href="#ornek2">Örnek 2: Çoklu CSV Birleştirme ve Duplicate Temizleme</a>
-    <a href="#beceri-matrisi">2.1 Beceri Sütunlarının İşlenmesi (Binary Matris)</a>
-    <a href="#nihai-dataset">2.2 Ön İşleme Sonucu Oluşturulan Nihai Veri Seti</a>
-    <a href="#apriori">3. Birliktelik Kuralları (Apriori) ile Analiz</a>
-    <a href="#bulgular">4. BULGULAR VE YORUM</a>
-    <a href="#soru1">4.1 Eğitim Bütçesi: Teknik mi Sosyal mi?</a>
-    <a href="#soru2">4.2 Unicorn Profil Analizi</a>
-    <a href="#soru3">4.3 Ayrılmaz Yetkinlikler (En Güçlü İkililer)</a>
-    <a href="#cikti">5. Üretilen Çıktılar</a>
-    <a href="#kurulum">6. Kurulum ve Çalıştırma</a>
-    <a href="#etik">7. Etik, Yasal Notlar ve Sınırlılıklar</a>
-    <a href="#sonuc">8. SONUÇ</a>
-  </div>
-
   <h2 id="giris">GİRİŞ</h2>
   <div class="card">
     <p>
