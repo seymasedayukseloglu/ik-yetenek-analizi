@@ -310,20 +310,76 @@ Bu bölüm, 16.718 iş ilanı üzerinden gerçekleştirilen veri madenciliği s�
 <br />
 <hr />
 
+<br />
+
 ## 💡 6. İşletme Açısından Stratejik ve Uygulanabilir Çıkarımlar
 
-<div style="padding: 15px; border: 1px dashed #28a745; border-radius: 6px;">
-  <ul>
-    <li><b>Yetenek Yönetimi:</b> İşe alım süreçlerinde teknik beceriler bir ön koşul olsa da, asıl eleme kriteri <b>%88 talep oranına sahip sosyal beceriler</b> olmalıdır.</li>
-    <li><b>İlan Optimizasyonu:</b> İlanlarda 6+ beceri istemek (Unicorn arayışı) aday havuzunu gereksiz yere daraltmaktadır. Piyasa standartı olan 2-3 odaklı beceri setine sadık kalınmalıdır.</li>
-    <li><b>Eğitim Planlama:</b> SQL ve Python gibi teknik eğitimler sadece ilgili departmanlara kanalize edilmeli, ancak <b>İletişim ve Takım Çalışması</b> eğitimleri şirket geneline yayılmalıdır.</li>
-  </ul>
-</div>
+Bu çalışma, ham veriyi stratejik birer karar destek mekanizmasına dönüştürmüştür. Elde edilen bulgular ışığında, modern İK departmanları için şu somut aksiyon planları önerilmektedir:
+
+### 🎯 6.1. Yetenek Yönetimi ve Seçme-Yerleştirme Revizyonu
+<ul>
+  <li><b>Eleme Kriterlerinin Önceliklendirilmesi:</b> Teknik beceriler (Python, SQL vb.) aday havuzunu daraltan "geçerlik" kriterleri olarak kullanılmalı; ancak mülakat ve nihai seçim süreçlerinde <b>%88 talep oranına sahip sosyal beceriler</b> (İletişim, Liderlik) ana belirleyici olmalıdır.</li>
+  <li><b>Beceri Ağırlıklı Puanlama:</b> İşe alım algoritmalarında sosyal yetkinliklerin ağırlığı, teknik yetkinliklerin en az 3 katı olacak şekilde güncellenmelidir.</li>
+</ul>
+
+### 📈 6.2. İlan Optimizasyonu ve Aday Deneyimi
+<ul>
+  <li><b>"Unicorn" Tuzağından Kaçınma:</b> Analiz, 6 ve üzeri beceri isteyen ilanların oranının <b>%0.01</b> olduğunu göstermiştir. Şirketler, "her şeyi bilen" aday arayışının aday havuzunu <b>%90'a varan oranlarda</b> daralttığını fark etmeli ve ilanlarını piyasa standartı olan <b>2-3 odaklı beceri seti</b> etrafında kurmalıdır.</li>
+  <li><b>Dil ve Kültür Odaklı İlanlar:</b> İngilizce ve Takım Çalışması arasındaki güçlü birliktelik göz önüne alındığında, global projeler için bu iki yetkinlik "paket" olarak ilan metinlerine yansıtılmalıdır.</li>
+</ul>
+
+### 🎓 6.3. Veri Güdümlü Eğitim Planlama (L&D Strategy)
+<ul>
+  <li><b>Bütçe Tahsisi:</b> Eğitim bütçelerinin büyük bir kısmı şirket geneline yayılacak <b>Çevik Yönetim (Agile)</b>, <b>Etkili İletişim</b> ve <b>Kriz Yönetimi</b> eğitimlerine aktarılmalıdır.</li>
+  <li><b>Departman Bazlı Teknik Odak:</b> SQL, Python ve ileri düzey Excel eğitimleri, şirket geneli yerine sadece veri ile doğrudan temas kuran "Business Intelligence" ve "Data" departmanlarına kanalize edilerek kaynak verimliliği sağlanmalıdır.</li>
+</ul>
 
 <br />
 
+<div align="center">
+  <table style="border: 2px solid #0366d6; border-collapse: collapse; width: 90%;">
+    <tr style="background-color: #0366d6; color: white;">
+      <th style="padding: 10px;">Stratejik Soru</th>
+      <th style="padding: 10px;">Veri Temelli Yanıt</th>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #dfe2e5;"><b>Eğitim Yatırımı Nereye?</b></td>
+      <td style="padding: 10px; border: 1px solid #dfe2e5;">%88 oranında Sosyal Becerilere.</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #dfe2e5;"><b>İlan Beklentisi Ne Olmalı?</b></td>
+      <td style="padding: 10px; border: 1px solid #dfe2e5;">Maksimum 3-4 odaklı yetkinlik (Unicorn aranmamalı).</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; border: 1px solid #dfe2e5;"><b>Kritik Birliktelik Ne?</b></td>
+      <td style="padding: 10px; border: 1px solid #dfe2e5;">Analiz Yeteneği + İletişim Gücü.</td>
+    </tr>
+  </table>
+</div>
+
+<br />
+<hr />
+
 ## 🏁 7. SONUÇ
 
-Bu çalışma, <b>Web Madenciliği</b> tekniklerinin İnsan Kaynakları stratejilerini nasıl rasyonelleştirebileceğini kanıtlamıştır. Selenium ve API yöntemleriyle toplanan 16.000+ ilan, piyasanın "sosyal beceri odaklı" bir yapıya büründüğünü ve işverenlerin sanılanın aksine "Unicorn" peşinde koşmadığını matematiksel olarak ortaya koymuştur. 
+Bu proje, <b>Web Madenciliği</b> ve <b>Birliktelik Kuralları</b> tekniklerinin İnsan Kaynakları disiplininde sadece operasyonel değil, aynı zamanda stratejik bir devrim yaratabileceğini kanıtlamıştır. 
+
+### 🔑 Temel Çıkarımlar:
+<ol>
+  <li><b>Piyasa Gerçekliği:</b> Selenium ve API yöntemleriyle 5 farklı platformdan toplanan <b>16.718 ilan</b>, Türkiye iş gücü piyasasının sanılanın aksine "insan odaklı" ve rasyonel bir çizgide olduğunu ortaya koymuştur.</li>
+  <li><b>Matematiksel Doğrulama:</b> Apriori algoritması ile yapılan analizler, becerilerin rastgele değil, belirli bir endüstriyel mantık çerçevesinde kümelendiğini göstermiştir.</li>
+  <li><b>İK'nın Geleceği:</b> Veri madenciliği, İK profesyonellerinin "sezgisel" kararlarını "kanıt temelli" stratejilere dönüştürerek, organizasyonel verimliliği artırmada kilit rol oynamaktadır.</li>
+</ol>
+
+<p align="center">
+  <b><i>"Veri olmadan verdiğiniz her karar, sadece bir tahminden ibarettir."</i></b>
+</p>
+
+<br />
+
+<div align="right">
+  <p><b>Proje Sahibi:</b> [Adınız Soyadınız]</p>
+  <p><b>Ders:</b> Web Madenciliği 2026</p>
+</div>
 
 ---
