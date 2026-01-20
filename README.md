@@ -1,35 +1,44 @@
 <div align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white" />
+  <img src="https://img.shields.io/badge/Data_Mining-FF6F00?style=for-the-badge&logo=google-cloud&logoColor=white" />
+  <br>
   <h1>🚀 İnsan Kaynakları Yetenek Analizi</h1>
   <h3>Web Madenciliği Dersi Proje Çalışması</h3>
-  <p><b>Veri Odaklı Karar Destek Mekanizması ve Birliktelik Kuralları (Association Rules)</b></p>
+  <p><b>16.000+ İş İlanı Üzerinden Birliktelik Kuralları (Apriori) ile Beceri Madenciliği</b></p>
 </div>
 
 ---
 
-## 📋 1. Proje Hakkında ve Giriş
+## 📋 1. Proje Özeti ve Giriş
 
-Bu proje, **Web Madenciliği** dersi kapsamında, modern İnsan Kaynakları (İK) süreçlerinde karşılaşılan karmaşık yetenek yönetimi problemlerine veri madenciliği teknikleriyle çözüm üretmek amacıyla geliştirilmiştir. 
+Bu çalışma, **Web Madenciliği** disiplininin veri toplama, temizleme ve anlamlandırma süreçlerini uçtan uca kapsamaktadır. Proje kapsamında, Türkiye’nin en büyük iş ilanı platformlarından (LinkedIn, Kariyer.net, Yenibiriş, Eleman.net vb.) **API** ve **Selenium** tabanlı web scraping yöntemleri kullanılarak toplam **16.718 adet** güncel iş ilanı çekilmiştir.
 
-Günümüz iş dünyasında, çalışanların sahip olduğu yetkinlikler artık birbirinden bağımsız birer değişken değil, birbirini tetikleyen ve tamamlayan **stratejik varlıklardır.** Bu çalışmada, iş ilanlarından ve personel verilerinden elde edilen veriler üzerinde **Birliktelik Kuralları (Association Rules Mining)** yöntemi kullanılarak, yetenek setleri arasındaki gizli ilişkiler gün yüzüne çıkarılmıştır.
+Elde edilen devasa veri kümesi; Python kütüphaneleri ile standardize edilerek, iş dünyasının "yetenek haritasını" çıkarmak için analiz edilmiştir. Çalışma, sadece akademik bir egzersiz değil, İK profesyonelleri için veri temelli bir karar destek mekanizması niteliğindedir.
 
 ### 👤 Geliştirici Bilgileri
-* **Hazırlayan:** [Şeyma Seda Yükseloğlu]
+* **Hazırlayan:** Şeyma Seda Yükseloğlu
 * **Ders:** Web Madenciliği
-* **Alan:** İnsan Kaynakları Analitiği (HR Analytics) & Veri Madenciliği
+* **Teknoloji Yığını:** Python (Pandas, Selenium, Mlxtend), Apriori Algoritması, Veri Görselleştirme.
 
 ---
 
 ## 🎯 2. Problem Tanımı ve Analiz Amacı
 
-İş gücü piyasasındaki dinamizm, şirketlerin "doğru yeteneğe doğru yatırımı yapma" konusundaki hata payını minimize etmesini zorunlu kılmaktadır. Bu proje, aşağıdaki kritik iş sorularına veri temelli yanıtlar aramak üzere kurgulanmıştır:
+Günümüz İK süreçlerinde "ideal aday" tanımı genellikle subjektif yorumlara dayanmaktadır. Bu proje, bu önyargıları kırarak aşağıdaki kritik iş sorularına **16.718 verinin gücüyle** yanıt aramaktadır:
 
-### 🔍 Temel Sorunlar ve Odak Noktaları:
+### 🔍 Temel Sorular:
 
-1.  **Stratejik Eğitim Bütçesi Yönetimi:** * Mevcut personelimizin gelişim bütçesi, teknik becerilere mi (**Python, SQL, Veri Analizi**) yoksa sosyal becerilere mi (**Liderlik, İletişim, Çevik Yönetim**) aktarılmalı? Hangi beceri grubu, şirketin operasyonel verimliliğini daha fazla artırıyor?
+1.  **Stratejik Eğitim Yatırımı:** Şirketler bütçelerini teknik araçlara (Python, SQL) mı yoksa sosyal yetkinliklere (İletişim, Liderlik) mi ayırmalı? 
+    * *Bulgu:* İlanların **%88'inde** sosyal becerilerin baskın olması, yatırımın yönünü belirlemektedir.
   
-2.  **Unicorn Aday Çıkmazı:** * İnsan Kaynakları departmanının aradığı profiller piyasada "bulunması imkansız" (Unicorn) beklentiler mi, yoksa sektörün doğal akışına uygun standart setler mi? İlanlardaki beklentilerin gerçek dünyadaki karşılığı nedir?
+2.  **Unicorn Aday Efsanesi:** Sektörde "her şeyi bilen" (Unicorn) adaylar mı aranıyor? 
+    * *Bulgu:* 6 ve üzeri beceri isteyen ilanların oranının **%0.01** olması, piyasanın sanılanın aksine daha rasyonel olduğunu göstermektedir.
 
-3.  **Yetkinlik Kümelenmeleri:** * Hangi iki yetkinlik (Örn: **Excel ve İngilizce** veya **Bulut Bilişim ve Siber Güvenlik**) artık ayrılmaz bir bütün haline gelmiş durumda? Birini bilen adayın diğerine sahip olma olasılığı nedir?
+3.  **Yetenek Birliktelikleri:** Hangi yetkinlikler ayrılmaz bir bütün haline gelmiştir?
+    * *Yöntem:* **Apriori Algoritması** kullanılarak beceriler arasındaki güven (confidence) ve destek (support) ilişkileri matematiksel olarak modellenmiştir.
 
-### 🛠️ Analitik Amaç:
-Bu projenin nihai amacı; **Apriori** veya **FP-Growth** gibi algoritmalar kullanarak yetenekler arasındaki **Destek (Support)**, **Güven (Confidence)** ve **Kaldıraç (Lift)** değerlerini hesaplamak, böylece İK departmanları için spekülatif değil, matematiksel verilere dayanan bir yol haritası sunmaktır.
+### 🛠️ Analitik Yaklaşım:
+Veriler ham metin formatından **Binary (0/1)** matris formatına dönüştürülmüş, karma beceriler modellenmiş ve işveren beklentilerinin gerçekçiliği sektör standartlarıyla kıyaslanmıştır.
+
+---
