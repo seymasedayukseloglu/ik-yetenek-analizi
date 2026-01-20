@@ -61,29 +61,54 @@ Projede kullanılan veri kaynakları ve tercih edilen toplama yöntemleri aşağ
 
 ---
 
-### 💻 Teknik Uygulama Detayları
+<br />
 
-#### A. Dinamik İçerik Yönetimi ve Bot Güvenliği
-Kariyer.net ve LinkedIn gibi platformlarda karşılaşılan bot korumalarını aşmak için **Undetected Chromedriver** kullanılmıştır. `time.sleep()` stratejileri ve manuel checkpoint'ler eklenerek veri çekme sürecinin sürekliliği sağlanmıştır.
+### 💻 1.3. Teknik Uygulama Detayları
 
-#### B. Performans Optimizasyonu (Multi-threading)
-Eleman.net gibi binlerce linkin taranması gereken aşamalarda, standart sıralı çekme yerine **Python `concurrent.futures`** modülü kullanılmıştır. 
-* **Etki:** 15 farklı "worker" aynı anda çalıştırılarak veri toplama süresi saatlerden dakikalara indirilmiştir.
+<div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 15px; background-color: #fafbfc;">
+  <h4 style="color: #0366d6;">🛡️ A. Dinamik İçerik Yönetimi ve Bot Güvenliği</h4>
+  <p>
+    Kariyer.net ve LinkedIn gibi yüksek güvenlikli platformlarda karşılaşılan bot korumalarını aşmak için <b>Undetected Chromedriver (UC)</b> kütüphanesi entegre edilmiştir. 
+    İşlem sırasında <code>time.sleep()</code> stratejileri ile insan davranışları simüle edilmiş ve veri kaybını önlemek amacıyla her 10 kayıtta bir <b>manuel checkpoint</b> oluşturularak veri güvenliği sağlanmıştır.
+  </p>
+</div>
 
-```python
-# Kullanılan Paralel İşleme Mimarisi
+<br />
+
+<div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 15px; background-color: #fafbfc;">
+  <h4 style="color: #0366d6;">⚡ B. Performans Optimizasyonu (Multi-threading)</h4>
+  <p>
+    Eleman.net ve Yenibiriş gibi binlerce ilanın detaylı taranması gereken aşamalarda, standart sıralı çekme mimarisi yerine Python'un <b>concurrent.futures</b> modülü kullanılmıştır.
+  </p>
+  <ul>
+    <li><b>Verimlilik Artışı:</b> 15 farklı "worker" aynı anda çalıştırılarak veri toplama süresi saatlerden dakikalara indirilmiştir.</li>
+  </ul>
+  
+  <pre style="background-color: #f6f8fa; padding: 10px; border-radius: 4px; overflow-x: auto;">
+<code># Kullanılan Paralel İşleme Mimarisi
 with ThreadPoolExecutor(max_workers=15) as executor:
-    sonuclar = list(executor.map(ilan_detay_cek, ilan_linkleri))
-#### C. Akıllı Beceri Ayıklama (Keyword Mapping)
-<p>
-  Henüz ham veri aşamasındayken, ilan metinleri içerisinde geçen yetkinlikler önceden tanımlanmış bir <b>yetenek sözlüğü (dictionary)</b> üzerinden taranmıştır. 
-  Bu işlem, yapılandırılmamış metin verisini istatistiksel analize uygun bir <b>Binary (0/1) Matrisine</b> dönüştürmüştür.
-</p>
+    sonuclar = list(executor.map(ilan_detay_cek, ilan_linkleri))</code></pre>
+</div>
 
-<table role="presentation" style="background-color: #f6f8fa; padding: 10px; border-radius: 6px; width: 100%;">
+<br />
+
+<div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 15px; background-color: #fafbfc;">
+  <h4 style="color: #0366d6;">🧠 C. Akıllı Beceri Ayıklama (Keyword Mapping)</h4>
+  <p>
+    Henüz ham veri aşamasındayken, ilan metinleri içerisinde geçen yetkinlikler önceden tanımlanmış geniş kapsamlı bir <b>yetenek sözlüğü (dictionary)</b> üzerinden taranmıştır.
+    Bu aşamada <code>RegEx</code> (Düzenli İfadeler) kullanılarak metinler normalize edilmiş ve yapılandırılmamış veri seti, istatistiksel analize uygun bir <b>Binary (0/1) Matrisine</b> dönüştürülmüştür.
+  </p>
+</div>
+
+<br />
+
+<table role="presentation" style="background-color: #fffbdd; border: 1px solid #d4a017; padding: 12px; border-radius: 6px; width: 100%;">
   <tr>
+    <td style="vertical-align: middle; padding-right: 10px;">
+      <span style="font-size: 20px;">📌</span>
+    </td>
     <td>
-      <b> Not:</b> Toplanan tüm veriler; <i>İlan Başlığı, Şirket, Lokasyon, Teknik Beceriler</i> ve <i>Sosyal Beceriler</i> kolonları altında <code>ik_yetenek_analizi_veriseti.csv</code> ismiyle tek bir merkezde birleştirilmiştir.
+      <b>Entegrasyon Notu:</b> Toplanan tüm ham veriler; <i>İlan Başlığı, Şirket, Lokasyon, Teknik Beceriler</i> ve <i>Sosyal Beceriler</i> kolonları altında birleştirilerek <code>ik_yetenek_analizi_veriseti.csv</code> ismiyle nihai analize hazır hale getirilmiştir.
     </td>
   </tr>
 </table>
