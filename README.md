@@ -42,3 +42,35 @@ Günümüz İK süreçlerinde "ideal aday" tanımı genellikle subjektif yorumla
 Veriler ham metin formatından **Binary (0/1)** matris formatına dönüştürülmüş, karma beceriler modellenmiş ve işveren beklentilerinin gerçekçiliği sektör standartlarıyla kıyaslanmıştır.
 
 ---
+
+## 🛠️ 1. Veri Toplama ve Veri Setinin Oluşturulması
+
+Bu aşamada, projenin temelini oluşturan **16.718 adet** iş ilanı, çok kanallı bir veri toplama mimarisiyle elde edilmiştir. Veri toplama süreci; dinamik içerikli sayfalar için **Selenium**, hızlı veri aktarımı için **API** ve verimlilik için **Multi-threading** (paralel işleme) teknikleri kullanılarak optimize edilmiştir.
+
+### 🌐 Veri Kaynakları ve Metodoloji
+
+Projede kullanılan veri kaynakları ve tercih edilen toplama yöntemleri aşağıdaki tabloda özetlenmiştir:
+
+| Kaynak Platform | Yöntem | Toplanan Veri | Teknik Detay |
+| :--- | :--- | :--- | :--- |
+| **LinkedIn** | Selenium | Global & Yerel İlanlar | Dinamik scroll ve `job-card` analizi |
+| **Kariyer.net** | Selenium (Undetected) | Sektörel Pozisyonlar | `undetected-chromedriver` ile bot engelini aşma |
+| **Himalayas API** | REST API | Global Uzaktan Çalışma | JSON veri parsing ve sistematik offset yönetimi |
+| **Eleman.net** | Hybrid (Selenium + BS4) | Kitle İlanları | `ThreadPoolExecutor` ile 15 kat daha hızlı veri çekme |
+| **Yenibiriş** | Selenium | Kurumsal İlanlar | `ActionChains` ile hover-over (üzerine gelme) etkileşimleri |
+
+---
+
+### 💻 Teknik Uygulama Detayları
+
+#### A. Dinamik İçerik Yönetimi ve Bot Güvenliği
+Kariyer.net ve LinkedIn gibi platformlarda karşılaşılan bot korumalarını aşmak için **Undetected Chromedriver** kullanılmıştır. `time.sleep()` stratejileri ve manuel checkpoint'ler eklenerek veri çekme sürecinin sürekliliği sağlanmıştır.
+
+#### B. Performans Optimizasyonu (Multi-threading)
+Eleman.net gibi binlerce linkin taranması gereken aşamalarda, standart sıralı çekme yerine **Python `concurrent.futures`** modülü kullanılmıştır. 
+* **Etki:** 15 farklı "worker" aynı anda çalıştırılarak veri toplama süresi saatlerden dakikalara indirilmiştir.
+
+```python
+# Kullanılan Paralel İşleme Mimarisi
+with ThreadPoolExecutor(max_workers=15) as executor:
+    sonuclar = list(executor.map(ilan_detay_cek, ilan_linkleri))
