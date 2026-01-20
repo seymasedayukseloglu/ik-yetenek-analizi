@@ -1,7 +1,6 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>İnsan Kaynakları Yetenek Analizi | Birliktelik Kuralları</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
