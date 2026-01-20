@@ -74,3 +74,19 @@ Eleman.net gibi binlerce linkin taranması gereken aşamalarda, standart sıral�
 # Kullanılan Paralel İşleme Mimarisi
 with ThreadPoolExecutor(max_workers=15) as executor:
     sonuclar = list(executor.map(ilan_detay_cek, ilan_linkleri))
+<h3>🔍 C. Akıllı Beceri Ayıklama (Keyword Mapping)</h3>
+<p>
+  Henüz ham veri aşamasındayken, ilan metinleri içerisinde geçen yetkinlikler önceden tanımlanmış bir <b>yetenek sözlüğü (dictionary)</b> üzerinden taranmıştır. 
+  Bu işlem, yapılandırılmamış metin verisini istatistiksel analize uygun bir <b>Binary (0/1) Matrisine</b> dönüştürmüştür.
+</p>
+
+<table role="presentation" style="background-color: #f6f8fa; padding: 10px; border-radius: 6px; width: 100%;">
+  <tr>
+    <td>
+      <b>📌 Not:</b> Toplanan tüm veriler; <i>İlan Başlığı, Şirket, Lokasyon, Teknik Beceriler</i> ve <i>Sosyal Beceriler</i> kolonları altında <code>ik_yetenek_analizi_veriseti.csv</code> ismiyle tek bir merkezde birleştirilmiştir.
+    </td>
+  </tr>
+</table>
+
+<br />
+<hr />
